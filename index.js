@@ -4,10 +4,19 @@ import routes from './routes/routes.js'
 import teacherRoutes from './routes/Teacher.js'
 import { products } from './store/products.js';
 import userDetails from './middlewares/logs.js';
+import connectDB from './db/connectDB.js';
+import dotenv from 'dotenv'
+dotenv.config();
+
+
+
+connectDB();
 
 
 
 const app = express();
+
+
 
 
 // console.clear()
@@ -76,6 +85,8 @@ app.get('/product', (req, res) => {
 //   res.sendFile(path.join(process.cwd(), './public/index.html'))
 // }) 
 
+const port = process.env.PORT || 8000;
 
-app.listen(3000, () => console.log(`Server running on 3000;`))
+
+app.listen(process.env.PORT || 8000, () => console.log(`${port}`))
 
