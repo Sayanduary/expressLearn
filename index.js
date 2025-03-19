@@ -6,6 +6,7 @@ import { products } from './store/products.js';
 import userDetails from './middlewares/logs.js';
 import connectDB from './db/connectDB.js';
 import dotenv from 'dotenv'
+import { insertManyDoc } from './models/Movies.js';
 dotenv.config();
 
 
@@ -87,6 +88,6 @@ app.get('/product', (req, res) => {
 
 const port = process.env.PORT || 8000;
 
-
+insertManyDoc()
 app.listen(process.env.PORT || 8000, () => console.log(`${port}`))
 
