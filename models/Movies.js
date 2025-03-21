@@ -20,7 +20,7 @@ const MoviesSchema = new mongoose.Schema({
 });
 
 // Create a model for the "movies" collection using the schema
-const MovieModel = mongoose.model("Movie", MoviesSchema);
+const MovieModels = mongoose.model("Movie", MoviesSchema);
 
 const insertManyDoc = async () => {
   try {
@@ -81,4 +81,4 @@ const insertManyDoc = async () => {
 
 
 
-export { MovieModel, insertManyDoc };
+export { MovieModels, insertManyDoc };
